@@ -1,0 +1,17 @@
+//DIRECTORIES
+.vs/
+bin/
+bin-obj/
+[Pp]remake/
+__pycache__/
+**/cache/
+
+//Files
+*.lib
+*.sln
+*.user
+*.vcxproj
+*.vcxproj.filters
+*.log
+imgui.ini
+*.json
