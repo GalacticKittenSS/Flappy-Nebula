@@ -2,7 +2,6 @@
 
 #include <Nebula.h>
 #include "Entities.h"
-#include "Utils/Arrays.h"
 
 class Flappy : public Nebula::Layer {
 public:
@@ -33,5 +32,5 @@ private:
 	};
 
 	GameState state = GameState::Paused;
-	Array<PillarPair> Pillars;
+	Nebula::Array<PillarPair> Pillars;
 };

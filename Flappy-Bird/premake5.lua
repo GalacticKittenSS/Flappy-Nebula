@@ -15,20 +15,15 @@ project "Flappy Bird"
 	}
 
 	includedirs {
-		"%{wks.location}/Nebula/include",
+		"%{includedir.Nebula}",
+		"%{includedir.Spdlog}",
 		"%{includedir.Entt}",
-		"%{includedir.ImGui}",
-		"%{includedir.Spdlog}"
+		"%{includedir.ImGui}"
 	}
 
 	links {
-		"GLFW.lib",
-		"GLad.lib",
-		"yaml-cpp.lib",
-		"Nebula.lib"
+		"Nebula"
 	}
-
-	libdirs { "%{wks.location}/Nebula/Modules/" }
 
 	filter "system:windows"
 		systemversion "latest"
@@ -37,6 +32,10 @@ project "Flappy Bird"
 		defines "NB_DEBUG"
 		runtime "Debug"
 		symbols "on"
+
+		postbuildcommands {
+			"{COPYDIR} \"%{LibraryDir.VulkanSDK_DebugDLL}\" \"%{cfg.targetdir}\""
+		}
 
 	filter "configurations:Release"
 		defines "NB_DEBUG"

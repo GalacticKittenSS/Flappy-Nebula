@@ -2,7 +2,6 @@
 
 #include <Nebula.h>
 #include "Utils/Collisions.h"
-#include "Utils/Random.h"
 #include "Utils/Hue.h"
 
 #include <string>
@@ -63,8 +62,8 @@ struct PillarPair {
 		PillarT.Position.x = screenRight;
 		PillarB.Position.x = screenRight;
 
-		float size =	Rand(350, 650) / 100.0f;
-		float height = (Rand(0, 500) - 250.0f) / 100.0f;
+		float size =	Nebula::Rand(350, 650) / 100.0f;
+		float height = (Nebula::Rand(0, 500) - 250.0f) / 100.0f;
 
 		float halfSize = size / 2;
 

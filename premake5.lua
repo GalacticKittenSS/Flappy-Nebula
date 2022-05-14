@@ -1,13 +1,9 @@
---Dependencies
-includedir = {}
-includedir["Entt"] =		"%{wks.location}/Nebula/Modules/entt/include"
-includedir["ImGui"] =		"%{wks.location}/Nebula/Modules/imgui/include"
-includedir["Spdlog"] =		"%{wks.location}/Nebula/Modules/spdlog/include"
-includedir["Yaml"] =		"%{wks.location}/Nebula/Modules/yaml-cpp/include"
+--include "./vendor/premake/premake_customization/solution_items.lua"
+include "Dependencies.lua"
 
 workspace "Flappy"
 	architecture "x86_64"
-	startproject "Nebula Storm"
+	startproject "Flappy Bird"
 
 	configurations {
 		"Debug",
@@ -17,5 +13,20 @@ workspace "Flappy"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
---Flappy App
+--Dependencies
+group "Dependencies"
+	include "Nebula/Nebula/Modules/Box2D"
+	include "Nebula/Nebula/Modules/GLFW"
+	include "Nebula/Nebula/Modules/GLad"
+	include "Nebula/Nebula/Modules/ImGui"
+	include "Nebula/Nebula/Modules/yaml-cpp"
+group ""
+
+--NEBULA
+group "Nebula"
+	include "Nebula/Nebula"		  -- Engine
+	include "Nebula/Nebula-Storm" -- Editor
+group ""
+
+--Client
 include "Flappy-Bird"

@@ -1,13 +1,15 @@
 //DIRECTORIES
 .vs/
-bin/
+**/bin/
 bin-obj/
+[Bb]ackups/
 [Pp]remake/
+Nebula/Modules/VulkanSDK/
 __pycache__/
 **/cache/
 
 //Files
-*.lib
+*.nbd
 *.sln
 *.user
 *.vcxproj
